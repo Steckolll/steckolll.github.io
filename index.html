@@ -1,13 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
     <head>
-        <title>Cool website</title>
-        <link rel="icon" type="image/png" href="/images/favicon.png">
-        <link rel="stylesheet" href="css/style.css" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Navbar 1</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <link href="./css/styles.css" rel="stylesheet" />
     </head>
     <body>
-        <h1>Мой сайт обо мне</h1>
-        <img src="images/7ad4f38f0f6fa256a54ff9a92f28f63b.gif" alt="Одна из моих аватарок" />
+    <nav class="navbar">
+        <div class="navbar-overlay" onclick="toggleMenuOpen()"></div>
+        <button type="button" class="navbar-burger" onclick="toggleMenuOpen()">
+            <span class="material-icons">menu</span>
+        </button>
+        <h1 class="navbar-title">★</h1>
+        <nav class="navbar-menu">
+            <button type="button" class="active">Главная</button>
+            <button type="button">Блог</button>
+            <button type="button">Контактная информация</button>
+        </nav>
+    </nav>
+    <script type="text/javascript" src="./main.js"></script>
+    <div class="main-text">
+        <h1>Сайт обо мне</h1>
         <p>Я начинающий программист-разработчик интересующийся децентрализованными технологиями и виртуальной реальностью.</p>
         <p>На данный момент я изучаю:
         <ul>
@@ -16,9 +41,10 @@
             <li>HTML, CSS, JavaScript (Разработка сайтов)</li>
             <li>Системное/Серверное администрирование</li>
         </ul>
-        </p>
-        <p>Кстати я сделал этот сайт чтобы практиковаться.</p>
-        <p>Поэтому добавляйте сайт в закладки и следите за его изменениями!</p>
-        <p>Мой профиль на <a href="https://github.com/Steckolll">GitHub</a>.</p>
+            </p>
+            <p>Кстати я сделал этот сайт чтобы практиковаться.</p>
+            <p>Поэтому добавляйте сайт в закладки и следите за его изменениями!</p>
+            <p>Мой профиль на <a href="https://github.com/Steckolll">GitHub</a>.</p>
+        </div>
     </body>
 </html>
