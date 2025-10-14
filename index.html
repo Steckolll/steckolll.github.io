@@ -2,50 +2,80 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Cool website</title>
-        <link rel="icon" href="images/boom.gif" type="image/gif">
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://fonts.googleapis.com/icon?family=Material+Icons"
-            rel="stylesheet"
-        />
+        <title>Website!</title>
+        <link rel="icon" href="images/eye.png" type="image/png">
         <link href="./css/styles.css" rel="stylesheet" />
     </head>
     <body>
     <nav class="navbar">
-        <div class="navbar-overlay" onclick="toggleMenuOpen()"></div>
-        <button type="button" class="navbar-burger" onclick="toggleMenuOpen()">
-            <span class="material-icons">menu</span>
-        </button>
+        
         <h1 class="navbar-title">★</h1>
         <nav class="navbar-menu">
-            <button type="button" class="active">Главная</button>
-            <button type="button">Блог</button>
-            <button type="button">Контактная информация</button>
+            <a href="#home" class="active">Главная</a>
+            <a href="#blog">Блог</a>
+            <a href="#contacts">Контакты</a>
         </nav>
     </nav>
     <script type="text/javascript" src="./main.js"></script>
-    <div class="main-text">
-        <h1>Обо мне</h1>
-        <p>Я начинающий программист-разработчик интересующийся децентрализованными технологиями и виртуальной реальностью.</p>
-        <p>На данный момент я изучаю:
-        <ul>
-            <li>Linux</li>
-            <li>Python</li>
-            <li>HTML, CSS, JavaScript (Разработка сайтов)</li>
-            <li>Системное/Серверное администрирование</li>
-        </ul>
-            </p>
-            <p>Кстати я сделал этот сайт чтобы практиковаться.</p>
-            <p>Поэтому добавляйте сайт в закладки и следите за его изменениями!</p>
-            <p>Мой профиль на <a href="https://github.com/Steckolll">GitHub</a>.</p>
+        <div class="main-text">
+
+            <section id="home">
+                <h1>Обо мне</h1>
+                <img src="images/notebook.gif" />
+                <p>Я начинающий программист-разработчик интересующийся децентрализованными технологиями и виртуальной реальностью.</p>
+                <p>На данный момент я изучаю:
+            <ul>
+                <li>Linux</li>
+                <li>Python</li>
+                <li>HTML, CSS, JavaScript (Разработка сайтов)</li>
+                <li>Системное/Серверное администрирование</li>
+            </ul>
+                </p>
+                <p>Кстати, я сделал этот сайт чтобы практиковаться.</p>
+                <p>Поэтому добавляйте сайт в закладки и следите за его изменениями!</p>
+            </section>
+<hr>
+            <section id="blog">
+                <h1>Блог</h1>
+                <img src="images/cool.gif" />
+                <p>Посты, блоги и проекты:
+            <ul>
+                <li>Цензура и свобода слова (скоро)</li>
+            </ul>
+                </p>
+            </section>
+<hr>
+            <section id="contacts">
+                <h1>Контакты</h1>
+                <img src="images/face.jpg" />
+            <ul>
+                <li>example.email</li>
+                <li>Профиль на GitHub</li>
+            </ul>
+            </section>
         </div>
+
+<script>
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.navbar-menu a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const activeLink = document.querySelector(
+          `.navbar-menu a[href="#${entry.target.id}"]`
+        );
+        if (activeLink) activeLink.classList.add('active');
+      }
+    });
+  }, {
+    rootMargin: '-50% 0px -50% 0px'
+  });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
     </body>
 </html>
